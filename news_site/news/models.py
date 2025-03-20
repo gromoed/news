@@ -13,7 +13,7 @@ class NewsArticle(models.Model):
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=50)
-    category = models.ManyToManyField(Category, related_name="articles", max_length=100, default=None)
+    categories = models.ManyToManyField(Category, related_name="articles", default=None)
 
     def __str__(self):
         return self.title
